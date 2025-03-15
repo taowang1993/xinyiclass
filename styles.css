@@ -1,0 +1,291 @@
+/* General Styles */
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    color: #333;
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+}
+
+/* Header */
+.navbar-brand {
+    font-weight: 700;
+    color: #e74c3c !important;
+}
+
+/* Hero Section */
+.hero {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 80px 0;
+    position: relative;
+}
+
+.hero:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+/* Yoga Banner */
+.yoga-banner {
+    overflow: hidden;
+    margin-top: -1px; /* Remove any gap between navbar and banner */
+}
+
+.banner-image-container {
+    width: 100%;
+    height: 600px;
+    overflow: hidden;
+    position: relative;
+}
+
+.banner-image {
+    width: 100%;
+    object-fit: cover;
+    object-position: center bottom; /* Crop from the top */
+    height: 100%;
+}
+
+/* Art Banner */
+.art-banner {
+    overflow: hidden;
+    margin-top: -1px; /* Remove any gap between navbar and banner */
+}
+
+.art-banner .banner-image-container {
+    width: 100%;
+    height: 400px; /* Set fixed height to allow cropping */
+    overflow: hidden;
+    position: relative;
+}
+
+.art-banner .banner-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 50%; /* Center crop from top and bottom */
+}
+
+/* Cards */
+.card {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-title {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Badges */
+.badge {
+    padding: 8px 12px;
+    font-weight: 500;
+}
+
+/* Buttons */
+.btn {
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background-color: #3498db;
+    border-color: #3498db;
+}
+
+.btn-primary:hover {
+    background-color: #2980b9;
+    border-color: #2980b9;
+}
+
+.btn-danger {
+    background-color: #e74c3c;
+    border-color: #e74c3c;
+}
+
+.btn-danger:hover {
+    background-color: #c0392b;
+    border-color: #c0392b;
+}
+
+.btn-success {
+    background-color: #2ecc71;
+    border-color: #2ecc71;
+}
+
+.btn-success:hover {
+    background-color: #27ae60;
+    border-color: #27ae60;
+}
+
+.btn-info {
+    background-color: #3498db;
+    border-color: #3498db;
+}
+
+.btn-info:hover {
+    background-color: #2980b9;
+    border-color: #2980b9;
+}
+
+/* Testimonials */
+.testimonial-avatar {
+    font-weight: 700;
+}
+
+/* Icon Boxes */
+.icon-box {
+    padding: 30px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    background-color: #fff;
+    height: 100%;
+    transition: transform 0.3s ease;
+}
+
+.icon-box:hover {
+    transform: translateY(-5px);
+}
+
+/* Footer */
+.footer {
+    background-color: #2c3e50;
+}
+
+.footer a {
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer a:hover {
+    color: #3498db !important;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .hero {
+        padding: 60px 0;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+}
+
+/* Carousel Styles */
+.carousel-item {
+    height: auto; /* Remove fixed height to allow natural image dimensions */
+}
+
+.carousel-item img {
+    width: 100%;
+    height: auto; /* Allow image to display at natural height ratio */
+    object-fit: contain; /* Ensure the entire image is visible */
+    max-height: 80vh; /* Limit height to 80% of viewport for very tall images */
+}
+
+/* Traditional and Additional Artwork Carousels */
+#traditional-artwork-carousel .carousel-item,
+#additional-artwork-carousel .carousel-item {
+    background-color: #f8f9fa;
+    padding: 20px 0;
+}
+
+.carousel-caption {
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 8px;
+    padding: 15px;
+}
+
+/* Enhanced Carousel for Yoga Page */
+#yogaPoseCarousel .carousel-item {
+    height: auto;
+}
+
+#yogaPoseCarousel .carousel-indicators {
+    bottom: -40px;
+}
+
+#yogaPoseCarousel .carousel-indicators button {
+    background-color: #aaa;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: none;
+    margin: 0 5px;
+}
+
+#yogaPoseCarousel .carousel-indicators button.active {
+    background-color: #3498db;
+}
+
+#yogaPoseCarousel .carousel-control-prev,
+#yogaPoseCarousel .carousel-control-next {
+    width: 10%;
+    opacity: 0.8;
+}
+
+#yogaPoseCarousel .carousel-control-prev-icon,
+#yogaPoseCarousel .carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    border-radius: 50%;
+}
+
+/* Art Gallery */
+.gallery-item {
+    margin-bottom: 30px;
+}
+
+.gallery-item img {
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.gallery-item img:hover {
+    transform: scale(1.02);
+}
+
+/* Class Schedule */
+.schedule-table {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.schedule-table th {
+    background-color: #3498db;
+    color: white;
+}
