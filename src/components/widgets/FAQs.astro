@@ -1,6 +1,5 @@
 ---
 import Headline from '~/components/ui/Headline.astro';
-import ItemGrid from '~/components/ui/ItemGrid.astro';
 import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
 import type { Faqs as Props } from '~/types';
 
@@ -9,7 +8,6 @@ const {
   subtitle = '',
   tagline = '',
   items = [],
-  columns = 2,
 
   id,
   isDark = false,
@@ -18,16 +16,33 @@ const {
 } = Astro.props;
 ---
 
-<WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-7xl mx-auto ${classes?.container ?? ''}`} bg={bg}>
+<WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-4xl mx-auto ${classes?.container ?? ''}`} bg={bg}>
   <Headline title={title} subtitle={subtitle} tagline={tagline} />
-  <ItemGrid
-    items={items}
-    columns={columns}
-    defaultIcon="tabler:chevron-right"
-    classes={{
-      container: `${columns === 1 ? 'max-w-4xl' : ''} gap-y-8 md:gap-y-12`,
-      panel: 'max-w-none',
-      icon: 'flex-shrink-0 mt-1 w-6 h-6 text-primary',
-    }}
-  />
+  <div class="mt-8">
+    <dl class="space-y-4">
+      {
+        items.map(({ title, description }) => (
+          <details class="group border-b border-gray-200 dark:border-gray-700 pb-4">
+            <summary class="flex justify-between items-center w-full cursor-pointer py-2 text-lg font-medium text-left text-gray-900 dark:text-white">
+              <span>{title}</span>
+              <span class="transform transition-transform duration-200 group-open:rotate-90">
+                <svg
+                  class="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+              </span>
+            </summary>
+            <div class="pt-2 text-base text-gray-600 dark:text-gray-400">
+              {description}
+            </div>
+          </details>
+        ))
+      }
+    </dl>
+  </div>
 </WidgetWrapper>

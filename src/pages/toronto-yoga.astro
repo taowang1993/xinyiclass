@@ -1,0 +1,145 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Content from '~/components/widgets/Content.astro';
+import Features from '~/components/widgets/Features.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import VueCarousel from '~/components/VueCarousel.vue';
+
+const metadata = {
+  title: 'Toronto Yoga Classes - Xinyi Class',
+  description: 'Find balance and wellness with our rejuvenating yoga sessions in North York, Toronto.',
+};
+
+const yogaPosesImages = [
+  { src: 'https://images.xinyiclass.com/xinyi/torontoyoga/slide1-1.jpg', alt: 'Yoga Pose 1' },
+  { src: 'https://images.xinyiclass.com/xinyi/torontoyoga/slide1-2.jpg', alt: 'Yoga Pose 2' },
+  { src: 'https://images.xinyiclass.com/xinyi/torontoyoga/slide1-3.jpg', alt: 'Yoga Pose 3' },
+  { src: 'https://images.xinyiclass.com/xinyi/torontoyoga/slide1-4.jpg', alt: 'Yoga Pose 4' },
+  { src: 'https://images.xinyiclass.com/xinyi/torontoyoga/slide1-5.jpg', alt: 'Yoga Pose 5' },
+];
+---
+
+<Layout metadata={metadata}>
+
+  <!-- Banner Section -->
+  <Hero
+    image={{
+      src: 'https://images.xinyiclass.com/xinyi/torontoyoga/banner.jpg',
+      alt: 'Toronto Yoga Classes Banner',
+    }}
+  >
+    <Fragment slot="title">
+      Yoga Classes at Xinyi Class
+    </Fragment>
+    <Fragment slot="subtitle">
+      Find inner peace and improve flexibility with our yoga classes.
+    </Fragment>
+  </Hero>
+
+  <!-- Hero Content Section -->
+  <Content
+    isReversed
+    items={[
+      {
+        title: 'YOGA CLASSES AT XINYI CLASS',
+        description: 'Xinyi Class offers various yoga classes for beginners and experienced practitioners alike. Our yoga sessions are designed to help you find inner peace, improve flexibility, and enhance your wellbeing. We believe that yoga is for everyone, regardless of age, fitness level, or experience. Through careful instruction and modifications, our experienced instructors are committed to creating accessible yoga experiences. We strive to create a community where students can feel comfortable, safe, and accepted as they navigate their yoga journey through mindful movement and conscious breath awareness.',
+      },
+    ]}
+    image={{
+      src: 'https://images.xinyiclass.com/xinyi/torontoyoga/slide6.jpg',
+      alt: 'Yoga Class',
+    }}
+  />
+
+  <!-- Yoga Pose Carousel -->
+  <section class="px-4 py-16 sm:px-6 mx-auto lg:px-8 lg:py-20 max-w-5xl">
+    <div class="text-center">
+        <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">Explore Our Yoga Poses</h2>
+    </div>
+    <div class="mt-12">
+      <VueCarousel images={yogaPosesImages} itemsToShow={1} client:load />
+    </div>
+  </section>
+
+  <!-- Featured Yoga Videos -->
+  <section class="px-4 py-16 sm:px-6 mx-auto lg:px-8 lg:py-20 max-w-5xl">
+    <div class="text-center">
+        <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">Featured Yoga Videos</h2>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
+      <div class="aspect-w-16 aspect-h-9">
+        <iframe src="https://www.youtube.com/embed/WFlboaWrvdY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="w-full h-full rounded-lg shadow-lg"></iframe>
+      </div>
+      <div class="aspect-w-16 aspect-h-9">
+        <iframe src="https://www.youtube.com/embed/PxCwOk8cmIA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="w-full h-full rounded-lg shadow-lg"></iframe>
+      </div>
+      <div class="aspect-w-16 aspect-h-9">
+        <iframe src="https://www.youtube.com/embed/koROUktw6RE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="w-full h-full rounded-lg shadow-lg"></iframe>
+      </div>
+      <div class="aspect-w-16 aspect-h-9">
+        <iframe src="https://www.youtube.com/embed/0SPigXK8j8E" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="w-full h-full rounded-lg shadow-lg"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Yoga Classes Section -->
+  <Features
+    title="Our Yoga Classes"
+    items={[
+      {
+        title: 'Hatha Yoga',
+        description: 'A gentle introduction to fundamental yoga postures. Great classes to develop strength and flexibility.',
+        icon: 'tabler:body-scan',
+        image: { src: 'https://images.xinyiclass.com/xinyi/torontoyoga/hatha.jpg', alt: 'Hatha Yoga' },
+      },
+      {
+        title: 'Vinyasa Flow',
+        description: 'Dynamic practice that synchronizes breath with movement. For both and advanced students.',
+        icon: 'tabler:wind',
+        image: { src: 'https://images.xinyiclass.com/xinyi/torontoyoga/vinyasa.jpg', alt: 'Vinyasa Flow' },
+      },
+      {
+        title: 'Yin Yoga',
+        description: 'Slow-paced style where poses are held for longer periods. Targets deep connective tissues and joints.',
+        icon: 'tabler:moon',
+        image: { src: 'https://images.xinyiclass.com/xinyi/torontoyoga/yin.jpg', alt: 'Yin Yoga' },
+      },
+    ]}
+    columns={3}
+    as="list"
+  />
+
+  <!-- Class Schedule -->
+  <Content
+    items={[
+      {
+        title: 'Class Schedule',
+        description: 'We offer a variety of classes throughout the week to fit your schedule. Please contact us for the latest schedule and availability.',
+      },
+    ]}
+    image={{
+      src: 'https://images.xinyiclass.com/xinyi/torontoyoga/schedule.jpg',
+      alt: 'Yoga Class Schedule',
+    }}
+  />
+
+  <!-- FAQ Section -->
+  <FAQs
+    title="Frequently Asked Questions"
+    items={[
+      {
+        title: 'What should I bring to class?',
+        description: 'We recommend bringing a yoga mat, a water bottle, and a small towel. Wear comfortable clothing that allows for a full range of movement. We provide blocks and straps, but you are welcome to bring your own.',
+      },
+      {
+        title: 'I am a beginner, which class is right for me?',
+        description: 'Our Hatha Yoga class is perfect for beginners. It provides a gentle introduction to the fundamental postures and helps build a strong foundation. Our instructors are skilled at offering modifications for all levels.',
+      },
+      {
+        title: 'Do I need to book in advance?',
+        description: 'Yes, we recommend booking your spot in advance as our class sizes are small to ensure personalized attention. You can book your class through our website or by calling the studio.',
+      },
+    ]}
+  />
+</Layout>

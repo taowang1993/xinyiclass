@@ -1,0 +1,148 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Content from '~/components/widgets/Content.astro';
+import Features from '~/components/widgets/Features.astro';
+import VueCarousel from '~/components/VueCarousel.vue';
+
+const traditionalArtworkImages = [
+  { src: 'https://images.xinyiclass.com/xinyi/torontoart/slide1-1.png', alt: 'Artwork 1' },
+  { src: 'https://images.xinyiclass.com/xinyi/torontoart/slide1-2.png', alt: 'Artwork 2' },
+  { src: 'https://images.xinyiclass.com/xinyi/torontoart/slide1-3.png', alt: 'Artwork 3' },
+  { src: 'https://images.xinyiclass.com/xinyi/torontoart/slide1-4.png', alt: 'Artwork 4' },
+];
+
+const studentGalleryImages = [
+  { src: 'https://images.xinyiclass.com/xinyi/torontoart/slide2-1.png', alt: 'Student Work 1' },
+  { src: 'https://images.xinyiclass.com/xinyi/torontoart/slide2-2.png', alt: 'Student Work 2' },
+  { src: 'https://images.xinyiclass.com/xinyi/torontoart/slide2-3.png', alt: 'Student Work 3' },
+  { src: 'https://images.xinyiclass.com/xinyi/torontoart/slide2-4.png', alt: 'Student Work 4' },
+  { src: 'https://images.xinyiclass.com/xinyi/torontoart/slide2-5.png', alt: 'Student Work 5' },
+  { src: 'https://images.xinyiclass.com/xinyi/torontoart/slide2-6.png', alt: 'Student Work 6' },
+  { src: 'https://images.xinyiclass.com/xinyi/torontoart/slide2-7.png', alt: 'Student Work 7' },
+];
+
+const featuredWorkImages = [
+  { src: 'https://images.xinyiclass.com/xinyi/torontoart/slide3-1.png', alt: 'Featured Work 1' },
+  { src: 'https://images.xinyiclass.com/xinyi/torontoart/slide3-2.png', alt: 'Featured Work 2' },
+  { src: 'https://images.xinyiclass.com/xinyi/torontoart/slide3-3.png', alt: 'Featured Work 3' },
+  { src: 'https://images.xinyiclass.com/xinyi/torontoart/slide3-4.png', alt: 'Featured Work 4' },
+  { src: 'https://images.xinyiclass.com/xinyi/torontoart/slide3-5.png', alt: 'Featured Work 5' },
+];
+
+const metadata = {
+  title: 'Toronto Art Classes - Xinyi Class',
+  description: 'Explore your creativity with our art classes for all ages in North York, Toronto.',
+};
+---
+
+<Layout metadata={metadata}>
+
+  <!-- Banner Section -->
+  <Hero
+    image={{
+      src: 'https://images.xinyiclass.com/xinyi/torontoart/banner.png',
+      alt: 'Toronto Art Classes Banner',
+    }}
+  >
+    <Fragment slot="title">
+      Art Classes at Xinyi Class
+    </Fragment>
+    <Fragment slot="subtitle">
+      Nurturing creativity through encouraging art instruction in a welcoming environment.
+    </Fragment>
+  </Hero>
+
+  <!-- Hero Banner Text -->
+  <Content
+    isReversed
+    items={[
+      {
+        title: 'In-Person & Online Art Classes',
+        description: `
+          <p class="mb-4">Xinyi Class offers in-person and online art classes for Kids, Teens and Adults. Our students receive encouraging art instructions in a comfortable and welcoming environment. By nurturing the artistic senses in everyone, art classes at Xinyi Class help to plant the seeds of lifelong creativity.</p>
+          <p class="mb-4">We believe in creativity as an educational tool, one that develops a student's confidence and problem-solving skills. We teach our students to be imaginative and trust their intuition — there is no right or wrong way to make an artwork. This unique type of experiential learning creates opportunities for self-expression and calculated risk-taking along with the enjoyment of seeing creative efforts lead to tangible results.</p>
+          <p>We are located in a busy location in North York Toronto (near 404 & Finch). We offer online classes as well.</p>
+        `,
+      },
+    ]}
+    image={{
+      src: 'https://images.xinyiclass.com/xinyi/torontoart/classroom.png',
+      alt: 'Art Classroom',
+    }}
+  />
+
+  <!-- Watch Our Classes in Action -->
+  <section class="px-4 py-16 sm:px-6 mx-auto lg:px-8 lg:py-20 max-w-5xl">
+    <div class="text-center">
+        <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">Watch Our Classes in Action</h2>
+    </div>
+    <div class="mt-12 aspect-w-16 aspect-h-9">
+      <iframe src="https://www.youtube.com/embed/1t98Fw2k988" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="w-full h-full rounded-lg shadow-lg"></iframe>
+    </div>
+  </section>
+
+  <!-- Traditional Artwork Carousel -->
+  <section class="px-4 py-16 sm:px-6 mx-auto lg:px-8 lg:py-20 max-w-5xl">
+    <div class="text-center">
+        <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">Traditional Chinese Artwork</h2>
+    </div>
+    <div class="mt-12">
+      <VueCarousel images={traditionalArtworkImages} itemsToShow={1} client:load />
+    </div>
+  </section>
+
+  <!-- Student Gallery Carousel -->
+  <section class="px-4 py-16 sm:px-6 mx-auto lg:px-8 lg:py-20 max-w-5xl">
+      <div class="text-center">
+          <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">Student Gallery</h2>
+      </div>
+      <div class="mt-12">
+      <VueCarousel images={studentGalleryImages} itemsToShow={1} client:load />
+    </div>
+  </section>
+
+  <!-- Featured Work Carousel -->
+  <section class="px-4 py-16 sm:px-6 mx-auto lg:px-8 lg:py-20 max-w-5xl">
+    <div class="text-center">
+        <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">Featured Work</h2>
+    </div>
+    <div class="mt-12">
+      <VueCarousel images={featuredWorkImages} itemsToShow={1} client:load />
+    </div>
+  </section>
+
+  <!-- Class Schedule -->
+  <Content
+    items={[
+      {
+        title: 'Class Schedule',
+        description: 'We offer a variety of classes throughout the week to fit your schedule. Please contact us for the latest schedule and availability.',
+      },
+    ]}
+    image={{
+      src: 'https://images.xinyiclass.com/xinyi/torontoart/schedule.png',
+      alt: 'Class Schedule',
+    }}
+  />
+
+  <!-- Therapy Section -->
+  <Content
+    isReversed
+    items={[
+      {
+        title: 'Art Therapy',
+        description: `
+          <p class="mb-4">Art therapy is a form of therapy that uses creative expression to improve physical, mental, and emotional well-being. At Xinyi Class, we incorporate therapeutic elements into our classes, helping students develop artistic skills and experience the healing power of creativity.</p>
+          <p>Through guided activities and mindful practice, participants can reduce stress, increase self-awareness, and process emotions in a safe, supportive environment. No artistic experience is necessary to benefit—just an openness to the creative process.</p>
+        `,
+      },
+    ]}
+    image={{
+      src: 'https://images.xinyiclass.com/xinyi/torontoart/therapy.png',
+      alt: 'Art Therapy',
+    }}
+  />
+
+
+</Layout>

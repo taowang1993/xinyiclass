@@ -28,8 +28,10 @@ const { language, textDirection } = I18N;
 <!doctype html>
 <html lang={language} dir={textDirection} class="2xl:text-[20px]">
   <head>
+
     <CommonMeta />
     <Favicons />
+    
     <CustomStyles />
     <ApplyColorMode />
     <Metadata {...metadata} />
@@ -43,6 +45,8 @@ const { language, textDirection } = I18N;
   <body class="antialiased text-default bg-page tracking-tight">
     <slot />
 
+
+    
     <BasicScripts />
   </body>
 </html>
