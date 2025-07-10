@@ -1,6 +1,6 @@
 site:
   name: Xinyi Class
-  site: 'https://astrowind.vercel.app'
+  site: 'https://xinyiclass.com'
   base: '/'
   trailingSlash: false
 
@@ -23,8 +23,8 @@ metadata:
         height: 628
     type: website
   twitter:
-    handle: '@onwidget'
-    site: '@onwidget'
+    handle: '@xinyiclass'
+    site: '@xinyiclass'
     cardType: summary_large_image
 
 i18n:

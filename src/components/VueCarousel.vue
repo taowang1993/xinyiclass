@@ -41,7 +41,7 @@ export default {
 <style>
 .carousel__prev,
 .carousel__next {
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: transparent;
   border-radius: 50%;
   width: 40px;
   height: 40px;
@@ -49,6 +49,6 @@ export default {
 
 .carousel__prev:hover,
 .carousel__next:hover {
-  background-color: white;
+  background-color: transparent;
 }
 </style>
